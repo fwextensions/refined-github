@@ -50,8 +50,8 @@
 }
 
 /* Remove tooltips */
-.tooltipped:not(.reaction-summary-item,.avatar-group-item,.avatar):before,
-.tooltipped:not(.reaction-summary-item,.avatar-group-item,.avatar):after {
+:not(.notification-actions) > .tooltipped:not(.reaction-summary-item):not(.avatar-group-item):not(.avatar):before,
+:not(.notification-actions) > .tooltipped:not(.reaction-summary-item):not(.avatar-group-item):not(.avatar):after {
 	display: none !important;
 }
 
@@ -445,12 +445,6 @@ we will add it back on for the simple news alerts we decide to show
 .reaction-popover-form.js-pick-reaction span.js-reaction-description,
 .reaction-popover-form.js-pick-reaction .dropdown-divider {
 	display: none;
-}
-
-/* Remove "Add your Reaction" tooltips */
-.reaction-popover-container .tooltipped::before,
-.reaction-popover-container .tooltipped::after {
-	display: none !important;
 }
 
 /*

@@ -1,7 +1,6 @@
 import select from 'select-dom';
 import {h} from 'dom-chef';
 import * as pageDetect from './page-detect';
-import {getUsername} from './utils';
 
 export default () => {
 	let op;
@@ -22,9 +21,6 @@ export default () => {
 		return;
 	}
 
-	const type = pageDetect.isPR() ? 'pull request' : 'issue';
-	const tooltip = `${op === getUsername() ? 'You' : 'This user'} submitted this ${type}.`;
-
 	const placeholders = select.all(`
 		.timeline-comment .timeline-comment-header-text,
 		.review-comment .comment-body
@@ -32,7 +28,7 @@ export default () => {
 
 	for (const placeholder of placeholders) {
 		placeholder.insertAdjacentElement('beforeBegin',
-			<span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label={tooltip}>
+			<span class="timeline-comment-label">
 				Original&nbsp;Poster
 			</span>
 		);

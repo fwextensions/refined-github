@@ -10,7 +10,7 @@ export default () => {
 			const $element = $(element);
 			if (!$element.hasClass('refined-github-has-upload-btn')) {
 				const uploadBtn = (
-					<label for={`refined-github-upload-btn-${index}`} class="toolbar-item tooltipped tooltipped-nw refined-github-upload-btn" aria-label="Upload a file">
+					<label for={`refined-github-upload-btn-${index}`} class="toolbar-item refined-github-upload-btn">
 						{icons.cloudUpload()}
 					</label>
 				);

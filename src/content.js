@@ -185,10 +185,7 @@ function addReadmeButtons() {
 	const [latestRelease] = toSemver([...releases.keys()], {clean: false});
 	if (latestRelease) {
 		buttons.appendChild(
-			<a
-				class="tooltipped tooltipped-nw"
-				href={`${releases.get(latestRelease)}#readme`}
-				aria-label={`View this file at the latest version (${latestRelease})`}>
+			<a href={`${releases.get(latestRelease)}#readme`}>
 				{icons.tag()}
 			</a>
 		);
@@ -202,10 +199,7 @@ function addReadmeButtons() {
 		const path = select('.breadcrumb').textContent.trim().split('/').slice(1).join('/');
 		const currentBranch = select('.branch-select-menu .select-menu-item.selected').textContent.trim();
 		buttons.appendChild(
-			<a
-				href={`/${repoUrl}/edit/${currentBranch}/${path}${readmeName}`}
-				class="tooltipped tooltipped-nw"
-				aria-label="Edit this file">
+			<a href={`/${repoUrl}/edit/${currentBranch}/${path}${readmeName}`}>
 				{icons.edit()}
 			</a>
 		);
@@ -389,8 +383,7 @@ function addDiffViewWithoutWhitespaceOption() {
 		<div class="diffbar-item refined-github-toggle-whitespace">
 			<a href={url}
 				data-hotkey="d w"
-				class={`btn btn-sm btn-outline BtnGroup-item tooltipped tooltipped-s ${hidingWhitespace ? 'bg-gray-light text-gray-light' : ''}`}
-				aria-label={`${hidingWhitespace ? 'Show' : 'Hide'} whitespace in diffs`}>
+				class={`btn btn-sm btn-outline BtnGroup-item ${hidingWhitespace ? 'bg-gray-light text-gray-light' : ''}`}>
 				{hidingWhitespace ? icons.check() : ''}
 				{' '}
 				No Whitespace
